@@ -1,0 +1,74 @@
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+272.24.70.248
+u'272.24.70.248' does not appear to be an IPv4 or IPv6 address
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+172.24.70.248
+No response of ping. Switch might be down or check routing.
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+172.24.70.225
+Switch is up
+
+--- flash:/startup-config
++++ system:/running-config
+@@ -285,6 +285,7 @@
+ !
+ interface Port-Channel1049
+    description CO1-0100-0001-01RS:Ethernet4/13/1
++   shutdown
+    load-interval 30
+    mtu 9100
+    ip address 10.10.88.96/31
+@@ -714,6 +715,7 @@
+ !
+ interface Port-Channel1061
+    description CO2-0100-0002-01RS:Ethernet4/21/1
++   shutdown
+    load-interval 5
+    ip address 10.10.88.128/31
+    ipv6 enable
+@@ -1193,7 +1195,6 @@
+ !
+ interface Ethernet3/41/1
+    description ixia_port
+-   shutdown
+    mtu 9100
+    speed forced 40gfull
+    no switchport
+@@ -2491,7 +2492,6 @@
+    neighbor 22.22.22.1 remote-as 65501
+    neighbor 22.22.22.1 maximum-routes 0
+    neighbor 88.88.88.1 remote-as 65501
+-   neighbor 88.88.88.1 route-map to-smd203 out
+    neighbor 88.88.88.1 send-community
+    neighbor 88.88.88.1 maximum-routes 0
+    neighbor 172.0.3.10 peer group to-ixia
+@@ -2594,7 +2594,6 @@
+ !
+ management api http-commands
+    protocol http
+-   protocol http localhost
+    protocol unix-socket
+    no shutdown
+    !
+
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+172.24.70.226
+Switch is up
+
+Check EAPI connection. Couldn't issue command to find diff in startup and running configs.
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+172.24.70.163
+Switch is up
+
+Success. No diff in startup-config and running-config.
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
